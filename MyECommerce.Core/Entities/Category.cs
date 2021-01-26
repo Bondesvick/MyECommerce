@@ -13,7 +13,7 @@ namespace MyECommerce.Core.Entities
         public string CategoryName { get; set; }
 
         public DateTime DateCreated { get; set; } = DateTime.Now;
-        public DateTime DateIpdated { get; set; } = DateTime.Now;
+        public DateTime DateUpdated { get; set; } = DateTime.Now;
 
         public ICollection<ProductCategory> ProductCategories { get; set; }
     }

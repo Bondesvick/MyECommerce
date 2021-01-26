@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using MyECommerce.Core.Entities;
 using MyECommerce.Core.Interfaces;
-using MyECommerce.Data;
+using MyECommerce.Infrastructure.Data;
 using System;
 
 namespace MyECommerce.Infrastructure.Services

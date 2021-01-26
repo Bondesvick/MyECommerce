@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MyECommerce.Core.Interfaces;
-using MyECommerce.Data;
+using MyECommerce.Infrastructure.Data;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 

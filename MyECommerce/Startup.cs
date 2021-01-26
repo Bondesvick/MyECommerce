@@ -1,11 +1,11 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using MyECommerce.Data;
+using MyECommerce.Core.Interfaces;
+using MyECommerce.Infrastructure.Services;
 
 namespace MyECommerce.API
 {
@@ -26,6 +26,10 @@ namespace MyECommerce.API
             //services.AddDbContextPool<AppDbContext>(options => options.UseSqlite(Configuration.GetConnectionString("DbConn")));
 
             services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<ICartRepository, CartRepository>();
+            services.AddScoped<IProductCategoryRepository, ProductCategoryRepository>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<IUserService, UserService>();
 
             services.AddSwaggerGen(c =>
             {

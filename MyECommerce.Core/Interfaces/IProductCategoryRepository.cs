@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using MyECommerce.Core.Entities;
+﻿using MyECommerce.Core.Entities;
 
 namespace MyECommerce.Core.Interfaces
 {

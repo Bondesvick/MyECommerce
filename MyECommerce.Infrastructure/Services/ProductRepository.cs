@@ -4,9 +4,9 @@ using MyECommerce.Infrastructure.Data;
 
 namespace MyECommerce.Infrastructure.Services
 {
-    public class CartRepository : BaseRepository<Cart>, ICartRepository
+    public class ProductRepository : BaseRepository<Product>, IProductRepository
     {
-        public CartRepository(AppDbContext dataContext) : base(dataContext)
+        public ProductRepository(AppDbContext dataContext) : base(dataContext)
         {
         }
     }
