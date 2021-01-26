@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace MyECommerce.Controllers.Models
+namespace MyECommerce.Core.Entities
 {
     public class Category
     {
@@ -15,7 +13,7 @@ namespace MyECommerce.Controllers.Models
         public string CategoryName { get; set; }
 
         public DateTime DateCreated { get; set; } = DateTime.Now;
-        public DateTime DateIpdated { get; set; } = DateTime.Now;
+        public DateTime DateUpdated { get; set; } = DateTime.Now;
 
         public ICollection<ProductCategory> ProductCategories { get; set; }
     }

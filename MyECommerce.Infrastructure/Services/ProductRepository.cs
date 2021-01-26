@@ -1,8 +1,8 @@
-﻿using MyECommerce.Controllers.Models;
-using MyECommerce.Data;
-using MyECommerce.Repositories.Interfaces;
+﻿using MyECommerce.Core.Entities;
+using MyECommerce.Core.Interfaces;
+using MyECommerce.Infrastructure.Data;
 
-namespace MyECommerce.Repositories.Services
+namespace MyECommerce.Infrastructure.Services
 {
     public class ProductRepository : BaseRepository<Product>, IProductRepository
     {

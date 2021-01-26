@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity;
 
-namespace MyECommerce.Controllers.Models
+namespace MyECommerce.Core.Entities
 {
     public class Cart
     {
@@ -18,6 +14,12 @@ namespace MyECommerce.Controllers.Models
 
         [Required]
         public int ProductId { get; set; }
+
+        [ForeignKey("UserId")]
+        public User User { get; set; }
+
+        [Required]
+        public string UserId { get; set; }
 
         public DateTime DataCreated { get; set; } = DateTime.Now;
         public DateTime DateUpdated { get; set; } = DateTime.Now;

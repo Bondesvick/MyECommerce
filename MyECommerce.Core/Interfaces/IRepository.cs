@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace MyECommerce.Repositories.Interfaces
+namespace MyECommerce.Core.Interfaces
 {
     public interface IRepository<T>
     {

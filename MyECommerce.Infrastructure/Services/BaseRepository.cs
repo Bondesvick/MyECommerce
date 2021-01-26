@@ -1,17 +1,17 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.EntityFrameworkCore;
+using MyECommerce.Core.Interfaces;
+using MyECommerce.Infrastructure.Data;
+using System.Collections.Generic;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using MyECommerce.Data;
-using MyECommerce.Repositories.Interfaces;
 
-namespace MyECommerce.Repositories.Services
+namespace MyECommerce.Infrastructure.Services
 {
     public abstract class BaseRepository<T> : IRepository<T> where T : class
     {
         protected readonly AppDbContext DataContext;
         private readonly DbSet<T> _entitySet;
 
-        protected BaseRepository(AppDbContext dataContext)
+        public BaseRepository(AppDbContext dataContext)
         {
             DataContext = dataContext;
             _entitySet = dataContext.Set<T>();
@@ -53,7 +53,7 @@ namespace MyECommerce.Repositories.Services
         {
             if (t != null)
             {
-                await _entitySet.AddAsync(t);
+                _entitySet.Add(t);
                 await DataContext.SaveChangesAsync();
             }
         }
@@ -69,7 +69,7 @@ namespace MyECommerce.Repositories.Services
 
         public async Task AddRange(T[] t)
         {
-            await DataContext.AddRangeAsync(t);
+            DataContext.AddRange(t);
             await DataContext.SaveChangesAsync();
         }
     }

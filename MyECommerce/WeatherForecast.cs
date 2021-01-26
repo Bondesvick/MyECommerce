@@ -1,6 +1,6 @@
 using System;
 
-namespace MyECommerce
+namespace MyECommerce.API
 {
     public class WeatherForecast
     {
