@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace MyECommerce.Controllers.Models
+﻿namespace MyECommerce.Core.Entities
 {
     public class User
     {
