@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MyECommerce.API.Controllers
 {
@@ -22,6 +23,7 @@ namespace MyECommerce.API.Controllers
             _logger = logger;
         }
 
+        //[Authorize]
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {

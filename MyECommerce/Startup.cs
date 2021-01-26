@@ -1,10 +1,14 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using MyECommerce.Core.Entities;
 using MyECommerce.Core.Interfaces;
+using MyECommerce.Infrastructure.Data;
 using MyECommerce.Infrastructure.Services;
 
 namespace MyECommerce.API
@@ -23,7 +27,10 @@ namespace MyECommerce.API
         {
             services.AddControllers();
 
-            //services.AddDbContextPool<AppDbContext>(options => options.UseSqlite(Configuration.GetConnectionString("DbConn")));
+            services.AddDbContextPool<AppDbContext>(options => options.UseSqlite(Configuration.GetConnectionString("DbConn")));
+
+            services.AddIdentity<User, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = false)
+                .AddEntityFrameworkStores<AppDbContext>();
 
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<ICartRepository, CartRepository>();
