@@ -6,6 +6,11 @@ namespace MyECommerce.Infrastructure.Data
 {
     public class AppDbContext : IdentityDbContext<User>
     {
+        public DbSet<Cart> Carts { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<ProductCategory> ProductCategories { get; set; }
+
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
         }
@@ -24,10 +29,5 @@ namespace MyECommerce.Infrastructure.Data
                 .WithMany(pc => pc.ProductCategories)
                 .HasForeignKey(pc => pc.CategoryId);
         }
-
-        public DbSet<Cart> Carts { get; set; }
-        public DbSet<Category> Categories { get; set; }
-        public DbSet<Product> Products { get; set; }
-        public DbSet<ProductCategory> ProductCategories { get; set; }
     }
 }
